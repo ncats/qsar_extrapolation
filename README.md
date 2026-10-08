@@ -1,18 +1,18 @@
 # QSAR Extrapolation
 
-This repository contains the Jupyter notebook associated with the manuscript **“Beyond the Domain: A Practical Recipe for QSAR Extrapolation”** by Sankalp Jain and Alexey V. Zakharov, National Center for Advancing Translational Sciences (NCATS), National Institutes of Health (NIH).
+This repository contains the Jupyter notebook associated with the manuscript **“Breaking the Potency Barrier: A Practical Recipe for QSAR Extrapolation”** by Sankalp Jain and Alexey V. Zakharov, National Center for Advancing Translational Sciences (NCATS), National Institutes of Health (NIH).
 
 ## Overview
 
-The notebook implements a differential quantitative structure-activity relationship (QSAR) workflow for predicting compounds that are more potent than those represented in the model-training data.
+The notebook implements a Pairwise-Difference QSAR (PD-QSAR) workflow for predicting compounds that are more potent than those represented in the model-training data.
 
-The differential model learns activity differences from differences in molecular descriptors between compound pairs. The resulting activity estimates are combined using three aggregation strategies:
+PD-QSAR learns activity differences from differences in molecular descriptors between compound pairs. The resulting activity estimates are combined using three aggregation strategies:
 
 * Mean aggregation
-* k-nearest-neighbor aggregation (`k = 3`)
+* kNN aggregation (`k=3`)
 * 10% quantile aggregation
 
-These approaches are compared with direct descriptor-based QSAR and Chemprop.
+These approaches are compared with Direct QSAR and Chemprop.
 
 ## Notebook
 
@@ -24,9 +24,9 @@ The notebook performs:
 * Curation and preparation of target-specific datasets
 * Potency-based external-validation splitting
 * Calculation and scaling of RDKit molecular descriptors
-* Differential neural-network modeling
+* PD-QSAR modeling
 * Mean, kNN, and 10% quantile aggregation
-* Direct descriptor-based QSAR modeling
+* Direct QSAR modeling
 * Chemprop modeling
 * Generation of target-specific prediction files
 
@@ -64,4 +64,4 @@ A CUDA-capable GPU is required by the current Chemprop trainer configuration.
 
 If you use this workflow, please cite the associated article after publication:
 
-> Jain S, Zakharov AV. *Beyond the Domain: A Practical Recipe for QSAR Extrapolation.*
+> Jain S, Zakharov AV. *Breaking the Potency Barrier: A Practical Recipe for QSAR Extrapolation.*
